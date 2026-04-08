@@ -29,7 +29,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'vision-ai',
     category: 'research',
     categoryLabel: 'วิจัย',
-    emoji: '🔬',
+    icon: 'microscope',
     bgColor: 'from-teal-50 to-teal-100',
     title: 'ระบบนำทางสำหรับผู้พิการทางสายตาด้วย AI',
     description:
@@ -41,7 +41,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'braille-audio',
     category: 'product',
     categoryLabel: 'ผลิตภัณฑ์',
-    emoji: '🎧',
+    icon: 'headphone',
     bgColor: 'from-amber-50 to-amber-100',
     title: 'หูฟังแปลงเสียงอักษรเบรลล์',
     description:
@@ -53,7 +53,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'health-project',
     category: 'community',
     categoryLabel: 'ชุมชน',
-    emoji: '🏘️',
+    icon: 'community',
     bgColor: 'from-indigo-50 to-indigo-100',
     title: 'โครงการ "สุขภาพดีไม่มีอุปสรรค"',
     description:
@@ -65,7 +65,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'national-award',
     category: 'award',
     categoryLabel: 'รางวัล',
-    emoji: '🏆',
+    icon: 'trophy',
     bgColor: 'from-red-50 to-red-100',
     title: 'รางวัลนวัตกรรมเพื่อสังคม ระดับชาติ 2566',
     description:
@@ -77,7 +77,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'mental-health',
     category: 'research',
     categoryLabel: 'วิจัย',
-    emoji: '🧠',
+    icon: 'brain',
     bgColor: 'from-teal-50 to-emerald-100',
     title: 'การวิจัยความต้องการด้านสุขภาพจิตคนพิการ',
     description:
@@ -89,7 +89,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'digital-classroom',
     category: 'community',
     categoryLabel: 'ชุมชน',
-    emoji: '📚',
+    icon: 'book',
     bgColor: 'from-violet-50 to-indigo-100',
     title: 'ห้องเรียนดิจิทัลสำหรับนักเรียนพิการ',
     description:
@@ -102,7 +102,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 export const SERVICES: Service[] = [
   {
     id: 'research',
-    icon: '🔬',
+    icon: 'microscope',
     title: 'วิจัยและพัฒนาเฉพาะทาง',
     description:
       'บริการวิจัยเชิงประยุกต์ด้านนวัตกรรมสำหรับคนพิการ ทั้งด้านเทคโนโลยี สุขภาพ และการออกแบบ',
@@ -115,7 +115,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'universal-design',
-    icon: '♿',
+    icon: 'accessibility',
     title: 'ออกแบบ Universal Design',
     description:
       'ให้คำปรึกษาและออกแบบผลิตภัณฑ์ บริการ และพื้นที่ที่ทุกคนเข้าถึงได้',
@@ -128,7 +128,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'assistive-tech',
-    icon: '🤖',
+    icon: 'robot',
     title: 'พัฒนาเทคโนโลยี Assistive',
     description:
       'ออกแบบและพัฒนาซอฟต์แวร์ แอปพลิเคชัน และอุปกรณ์ช่วยเหลือสำหรับคนพิการ',
@@ -141,7 +141,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'consulting',
-    icon: '📋',
+    icon: 'clipboard',
     title: 'ให้คำปรึกษาองค์กร',
     description:
       'ช่วยองค์กรทั้งภาครัฐและเอกชนพัฒนานโยบายและสภาพแวดล้อมที่เป็นมิตรกับคนพิการ',
@@ -154,7 +154,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'training',
-    icon: '🎓',
+    icon: 'school',
     title: 'ฝึกอบรมและพัฒนาศักยภาพ',
     description:
       'หลักสูตรฝึกอบรมสำหรับนักวิจัย นักออกแบบ และผู้ให้บริการที่ทำงานกับคนพิการ',
@@ -167,7 +167,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'evaluation',
-    icon: '📊',
+    icon: 'chart',
     title: 'ประเมินและวัดผลโครงการ',
     description:
       'บริการประเมินผลโครงการและนโยบายด้านคนพิการอย่างครอบคลุมด้วยวิธีการที่ยึดหลักฐาน',
@@ -183,7 +183,7 @@ export const SERVICES: Service[] = [
 export const PRODUCTS: Product[] = [
   {
     id: 'vision-guide',
-    icon: '👁️',
+    icon: 'eye',
     title: 'VisionGuide AI',
     subtitle: 'ระบบนำทางผู้พิการทางสายตา',
     description:
@@ -195,7 +195,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'talk-bridge',
-    icon: '🎙️',
+    icon: 'mic',
     title: 'TalkBridge',
     subtitle: 'อุปกรณ์สื่อสารสำหรับผู้พิการทางการพูด',
     description:
@@ -207,7 +207,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'access-health',
-    icon: '📱',
+    icon: 'phone',
     title: 'AccessHealth TH',
     subtitle: 'แพลตฟอร์มข้อมูลสุขภาพคนพิการ',
     description:
@@ -219,7 +219,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'include-work',
-    icon: '🤝',
+    icon: 'handshake',
     title: 'IncludeWork Platform',
     subtitle: 'แพลตฟอร์มจับคู่งานคนพิการ',
     description:
@@ -233,27 +233,27 @@ export const PRODUCTS: Product[] = [
 
 export const ACCESSIBILITY_FEATURES: AccessibilityFeature[] = [
   {
-    icon: '👁️',
+    icon: 'eye',
     title: 'WCAG 2.1 AA',
     description: 'ผ่านมาตรฐาน Web Content Accessibility Guidelines ระดับ AA',
   },
   {
-    icon: '⌨️',
+    icon: 'keyboard',
     title: 'Keyboard Navigation',
     description: 'นำทางทั้งเว็บได้ด้วยแป้นพิมพ์ ไม่ต้องใช้เมาส์',
   },
   {
-    icon: '🔊',
+    icon: 'volume',
     title: 'Screen Reader Ready',
     description: 'ทดสอบกับ NVDA, JAWS และ VoiceOver บน iOS',
   },
   {
-    icon: '🎨',
+    icon: 'contrast',
     title: 'High Contrast Mode',
     description: 'รองรับ High Contrast และการปรับขนาดฟอนต์',
   },
   {
-    icon: '🌏',
+    icon: 'language',
     title: 'ภาษาไทยเต็มรูปแบบ',
     description: 'เนื้อหาภาษาไทยทั้งหมด รองรับฟอนต์ขนาดใหญ่',
   },

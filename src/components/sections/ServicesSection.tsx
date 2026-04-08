@@ -3,6 +3,7 @@
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { SERVICES } from '@/lib/constants'
+import { SERVICE_ICONS } from '@/components/ui/Icons'
 
 export default function ServicesSection() {
   return (
@@ -56,12 +57,12 @@ export default function ServicesSection() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '28px',
+                    color: 'var(--teal)',
                     marginBottom: '20px',
                   }}
                   aria-hidden="true"
                 >
-                  {service.icon}
+                  {SERVICE_ICONS[service.icon]}
                 </div>
                 <h3
                   style={{

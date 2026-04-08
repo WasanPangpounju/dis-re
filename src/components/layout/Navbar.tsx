@@ -71,7 +71,7 @@ export default function Navbar() {
             }}
             aria-hidden="true"
           >
-            ค
+            logo
           </div>
           <span
             style={{
@@ -164,7 +164,7 @@ export default function Navbar() {
             }}
             aria-label="ถามผู้เชี่ยวชาญ ไปที่หน้าติดต่อ"
           >
-            💬 ถามผู้เชี่ยวชาญ
+            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor" aria-hidden="true"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" /></svg> ถามผู้เชี่ยวชาญ
           </Link>
 
           {/* Hamburger */}
@@ -245,7 +245,10 @@ export default function Navbar() {
             <Link
               href="/contact"
               style={{
-                display: 'block',
+                display: 'flex',         
+                alignItems: 'center',      
+                justifyContent: 'center', 
+                gap: '8px',
                 padding: '12px 20px',
                 borderRadius: '10px',
                 background: 'linear-gradient(135deg, #D4A843, #F0C96B)',
@@ -256,7 +259,9 @@ export default function Navbar() {
                 textAlign: 'center',
               }}
             >
-              💬 ถามผู้เชี่ยวชาญ
+              <svg xmlns="http://www.w3.org/2000/svg" style={{ marginTop:'2px'}} height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor" aria-hidden="true">
+                <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+              </svg> ถามผู้เชี่ยวชาญ
             </Link>
           </li>
         </ul>

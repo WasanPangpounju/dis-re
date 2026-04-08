@@ -3,6 +3,7 @@
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { PRODUCTS } from '@/lib/constants'
+import { PRODUCT_ICONS } from '@/components/ui/Icons'
 
 export default function ProductsSection() {
   return (
@@ -77,8 +78,8 @@ export default function ProductsSection() {
                   >
                     {product.badge}
                   </span>
-                  <div style={{ fontSize: '40px', marginBottom: '12px' }} aria-hidden="true">
-                    {product.icon}
+                  <div style={{ marginBottom: '12px', color: 'var(--teal)' }} aria-hidden="true">
+                    {PRODUCT_ICONS[product.icon]}
                   </div>
                   <h3
                     style={{

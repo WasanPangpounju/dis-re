@@ -1,7 +1,7 @@
 'use client'
 
 import { PRODUCTS } from '@/lib/constants'
-
+import { PRODUCT_ICONS } from '@/components/ui/Icons'
 
 export default function ProductsPage() {
   return (
@@ -84,8 +84,8 @@ export default function ProductsPage() {
                 >
                   {product.badge}
                 </span>
-                <div style={{ fontSize: '48px', marginBottom: '16px' }} aria-hidden="true">
-                  {product.icon}
+                <div style={{ marginBottom: '16px', color: 'var(--teal)' }} aria-hidden="true">
+                  {PRODUCT_ICONS[product.icon]}
                 </div>
                 <h2
                   style={{

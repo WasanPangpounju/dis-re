@@ -9,7 +9,7 @@ export interface PortfolioItem {
   id: string
   category: string
   categoryLabel: string
-  emoji: string
+  icon: string
   bgColor: string
   title: string
   description: string

@@ -1,7 +1,14 @@
 'use client'
 
 import { SERVICES } from '@/lib/constants'
+import { SERVICE_ICONS } from '@/components/ui/Icons'
 
+
+const ChatIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#fff">
+    <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+  </svg>
+)
 
 export default function ServicesPage() {
   return (
@@ -64,12 +71,12 @@ export default function ServicesPage() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '30px',
+                  color: 'var(--teal)',
                   marginBottom: '20px',
                 }}
                 aria-hidden="true"
               >
-                {service.icon}
+                {SERVICE_ICONS[service.icon]}
               </div>
               <h2
                 style={{
@@ -147,7 +154,7 @@ export default function ServicesPage() {
               fontSize: '18px',
             }}
           >
-            💬 ติดต่อเรา
+            <ChatIcon/> ติดต่อเรา
           </a>
         </div>
       </div>
