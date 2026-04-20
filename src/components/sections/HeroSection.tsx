@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { STATS } from '@/lib/constants'
+import type { Stat } from '@/lib/types'
 
 const MicroscopeIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
@@ -41,7 +42,8 @@ const GroupIcon = () => (
 )
 
 
-export default function HeroSection() {
+export default function HeroSection({ stats: statsProp }: { stats?: Stat[] } = {}) {
+  const stats = statsProp ?? STATS
   return (
     <section
       aria-label="แบนเนอร์หลัก"
@@ -213,7 +215,7 @@ export default function HeroSection() {
               flexWrap: 'wrap',
             }}
           >
-            {STATS.map((stat) => (
+            {stats.map((stat) => (
               <div key={stat.label}>
                 <div
                   style={{

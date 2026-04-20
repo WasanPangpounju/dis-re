@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(mkdir -p \"C:/Users/Friendly Dev/project/dis-re/src/app/api/admin/portfolio/[id]\")",
+      "Bash(mkdir -p \"C:/Users/Friendly Dev/project/dis-re/src/app/api/admin/services/[id]\")",
+      "Bash(mkdir -p \"C:/Users/Friendly Dev/project/dis-re/src/app/api/admin/products/[id]\")",
+      "Bash(mkdir -p \"C:/Users/Friendly Dev/project/dis-re/src/app/admin/portfolio/[id]\")",
+      "Bash(mkdir -p \"C:/Users/Friendly Dev/project/dis-re/src/app/admin/services/[id]\")",
+      "Bash(mkdir -p \"C:/Users/Friendly Dev/project/dis-re/src/app/admin/products/[id]\")",
+      "Bash(npm run *)",
+      "Bash(node -e \"const p = require\\('./node_modules/next/package.json'\\); console.log\\(p.version\\)\")"
+    ]
+  }
+}

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { PORTFOLIO_ITEMS } from '@/lib/constants'
+import type { PortfolioItem } from '@/lib/types'
 
 const FILTERS = [
   { value: 'all', label: 'ทั้งหมด' },
@@ -47,13 +48,14 @@ const PORTFOLIO_ICONS: Record<string, React.ReactNode> = {
   ),
 }
 
-export default function PortfolioSection() {
+export default function PortfolioSection({ items: itemsProp }: { items?: PortfolioItem[] } = {}) {
+  const allItems = itemsProp ?? PORTFOLIO_ITEMS
   const [activeFilter, setActiveFilter] = useState('all')
 
   const filtered =
     activeFilter === 'all'
-      ? PORTFOLIO_ITEMS.slice(0, 6)
-      : PORTFOLIO_ITEMS.filter((item) => item.category === activeFilter).slice(0, 6)
+      ? allItems.slice(0, 6)
+      : allItems.filter((item) => item.category === activeFilter).slice(0, 6)
 
 
   const CalendarIcon = () => (

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "vision-guide",
+    "icon": "eye",
+    "title": "VisionGuide AI",
+    "subtitle": "ระบบนำทางผู้พิการทางสายตา",
+    "description": "แอปพลิเคชันมือถือที่ใช้ AI วิเคราะห์ภาพจากกล้องเพื่ออ่านป้าย ตรวจจับสิ่งกีดขวาง และนำทางในพื้นที่ต่างๆ สำหรับผู้ตาบอดและผู้มีสายตาเลือนราง",
+    "tags": ["Computer Vision", "Text-to-Speech", "iOS / Android"],
+    "status": "เปิดให้ใช้งานแล้ว",
+    "statusColor": "teal",
+    "badge": "พร้อมใช้งาน"
+  },
+  {
+    "id": "talk-bridge",
+    "icon": "mic",
+    "title": "TalkBridge",
+    "subtitle": "อุปกรณ์สื่อสารสำหรับผู้พิการทางการพูด",
+    "description": "อุปกรณ์ฮาร์ดแวร์ + ซอฟต์แวร์ที่แปลงการเคลื่อนไหวของดวงตาและสัญญาณสมองเป็นคำพูดได้แบบ Real-time",
+    "tags": ["Eye Tracking", "AI Speech", "Hardware"],
+    "status": "Pilot กำลังดำเนินการ",
+    "statusColor": "teal",
+    "badge": "ใหม่ 2567"
+  },
+  {
+    "id": "access-health",
+    "icon": "phone",
+    "title": "AccessHealth TH",
+    "subtitle": "แพลตฟอร์มข้อมูลสุขภาพคนพิการ",
+    "description": "เว็บและแอปให้ข้อมูลสุขภาพสำหรับคนพิการทุกประเภท พร้อม Screen Reader รองรับ WCAG 2.1 AA",
+    "tags": ["WCAG 2.1 AA", "Screen Reader", "ภาษาไทย"],
+    "status": "เปิดให้ใช้งานแล้ว",
+    "statusColor": "teal",
+    "badge": "พร้อมใช้งาน"
+  },
+  {
+    "id": "include-work",
+    "icon": "handshake",
+    "title": "IncludeWork Platform",
+    "subtitle": "แพลตฟอร์มจับคู่งานคนพิการ",
+    "description": "ระบบ AI จับคู่นายจ้างกับผู้พิการที่มีทักษะตรงกัน พร้อมเครื่องมือประเมินความพร้อมและสนับสนุนการทำงาน",
+    "tags": ["Job Matching AI", "HR Tech", "B2B / B2C"],
+    "status": "เปิดรับ Beta Tester",
+    "statusColor": "gold",
+    "badge": "กำลังพัฒนา"
+  }
+]

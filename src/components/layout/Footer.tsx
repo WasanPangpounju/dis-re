@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { COMPANY, NAV_LINKS } from '@/lib/constants'
+import { NAV_LINKS, COMPANY } from '@/lib/constants'
+import type { GeneralContent } from '@/lib/content'
 
 const PhoneIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="currentColor" style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }}>
@@ -21,7 +22,9 @@ const AccessibilityIcon = () => (
   </svg>
 )
 
-export default function Footer() {
+type CompanyData = GeneralContent['company']
+
+export default function Footer({ company = COMPANY }: { company?: CompanyData }) {
   return (
     <footer
       style={{ background: '#0a2035', color: 'rgba(255,255,255,0.8)', paddingTop: '60px' }}
@@ -67,17 +70,17 @@ export default function Footer() {
                   lineHeight: 1.4,
                 }}
               >
-                {COMPANY.shortName}
+                {company.shortName}
               </span>
             </div>
             <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', marginBottom: '20px' }}>
-              {COMPANY.description}
+              {company.description}
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {[
-                { href: COMPANY.socialMedia.facebook, label: 'Facebook', icon: 'f' },
-                { href: COMPANY.socialMedia.line, label: 'Line', icon: 'L' },
-                { href: COMPANY.socialMedia.youtube, label: 'YouTube', icon: '▶' },
+                { href: company.socialMedia.facebook, label: 'Facebook', icon: 'f' },
+                { href: company.socialMedia.line, label: 'Line', icon: 'L' },
+                { href: company.socialMedia.youtube, label: 'YouTube', icon: '▶' },
               ].map((social) => (
                 <a
                   key={social.label}
@@ -154,19 +157,19 @@ export default function Footer() {
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
-                {COMPANY.address}
+                {company.address}
               </p>
               <a
-                href={`tel:${COMPANY.phone}`}
+                href={`tel:${company.phone}`}
                 style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: '16px' }}
               >
-                <PhoneIcon />{COMPANY.phone}
+                <PhoneIcon />{company.phone}
               </a>
               <a
-                href={`mailto:${COMPANY.email}`}
+                href={`mailto:${company.email}`}
                 style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: '16px' }}
               >
-                <EmailIcon />{COMPANY.email}
+                <EmailIcon />{company.email}
               </a>
               <div
                 style={{
@@ -181,10 +184,10 @@ export default function Footer() {
                   สายด่วนความพิการ
                 </p>
                 <a
-                  href={`tel:${COMPANY.accessibilityHotline}`}
+                  href={`tel:${company.accessibilityHotline}`}
                   style={{ color: 'white', textDecoration: 'none', fontSize: '18px', fontWeight: 700 }}
                 >
-                  {COMPANY.accessibilityHotline}
+                  {company.accessibilityHotline}
                 </a>
                 <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', margin: '4px 0 0' }}>
                   บริการฟรี ทุกวัน 08:00–20:00
@@ -206,7 +209,7 @@ export default function Footer() {
           }}
         >
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
-            © 2567 {COMPANY.name} ทะเบียนเลขที่ {COMPANY.registrationNumber}
+            © 2567 {company.name} ทะเบียนเลขที่ {company.registrationNumber}
           </p>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
             ออกแบบเพื่อ <AccessibilityIcon /> ทุกคน · WCAG 2.1 AA

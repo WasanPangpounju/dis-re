@@ -5,6 +5,9 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import SkipLink from '@/components/layout/SkipLink'
 import ChatWidget from '@/components/chat/ChatWidget'
+import { content } from '@/lib/content'
+
+export const dynamic = 'force-dynamic'
 
 const sarabun = Sarabun({
   subsets: ['thai', 'latin'],
@@ -57,18 +60,20 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const general = await content.general.get()
+
   return (
     <html lang="th" className={`${sarabun.variable} ${kanit.variable}`}>
       <body>
         <SkipLink />
         <Navbar />
         <main id="main-content">{children}</main>
-        <Footer />
+        <Footer company={general.company} />
         <ChatWidget />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>

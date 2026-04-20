@@ -4,9 +4,12 @@ import { useState } from 'react'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { COMPANY } from '@/lib/constants'
+import type { GeneralContent } from '@/lib/content'
 import type { ContactFormData } from '@/lib/types'
 
-export default function ContactSection() {
+type CompanyData = GeneralContent['company']
+
+export default function ContactSection({ company = COMPANY }: { company?: CompanyData }) {
   const [form, setForm] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -99,10 +102,10 @@ export default function ContactSection() {
           <RevealOnScroll>
             <div>
               {[
-                { icon: <LocationIcon />, label: 'ที่อยู่', value: COMPANY.address },
-                { icon: <PhoneIcon />, label: 'โทรศัพท์', value: COMPANY.phone, href: `tel:${COMPANY.phone}` },
-                { icon: <EmailIcon />, label: 'อีเมล', value: COMPANY.email, href: `mailto:${COMPANY.email}` },
-                { icon: <SosIcon />, label: 'สายด่วนความพิการ', value: COMPANY.accessibilityHotline, href: `tel:${COMPANY.accessibilityHotline}` },
+                { icon: <LocationIcon />, label: 'ที่อยู่', value: company.address },
+                { icon: <PhoneIcon />, label: 'โทรศัพท์', value: company.phone, href: `tel:${company.phone}` },
+                { icon: <EmailIcon />, label: 'อีเมล', value: company.email, href: `mailto:${company.email}` },
+                { icon: <SosIcon />, label: 'สายด่วนความพิการ', value: company.accessibilityHotline, href: `tel:${company.accessibilityHotline}` },
               ].map((item) => (
                 <div
                   key={item.label}

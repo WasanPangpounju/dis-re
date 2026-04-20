@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { Metadata } from 'next'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { PORTFOLIO_ITEMS } from '@/lib/constants'
+import type { PortfolioItem } from '@/lib/types'
 
 
 const PORTFOLIO_ICONS: Record<string, React.ReactNode> = {
@@ -79,11 +80,16 @@ const FILTERS = [
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [allItems, setAllItems] = useState<PortfolioItem[]>(PORTFOLIO_ITEMS)
+
+  useEffect(() => {
+    fetch('/api/content/portfolio').then(r => r.json()).then(setAllItems).catch(() => {})
+  }, [])
 
   const filtered =
     activeFilter === 'all'
-      ? PORTFOLIO_ITEMS
-      : PORTFOLIO_ITEMS.filter((item) => item.category === activeFilter)
+      ? allItems
+      : allItems.filter((item) => item.category === activeFilter)
 
   return (
     <div style={{ paddingTop: '70px', minHeight: '100vh' }}>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "research",
+    "icon": "microscope",
+    "title": "วิจัยและพัฒนาเฉพาะทาง",
+    "description": "บริการวิจัยเชิงประยุกต์ด้านนวัตกรรมสำหรับคนพิการ ทั้งด้านเทคโนโลยี สุขภาพ และการออกแบบ",
+    "features": [
+      "Research Design & Methodology",
+      "User Research กับกลุ่มคนพิการ",
+      "วิเคราะห์ข้อมูลและรายงาน",
+      "ตีพิมพ์ผลงานวิชาการ"
+    ]
+  },
+  {
+    "id": "universal-design",
+    "icon": "accessibility",
+    "title": "ออกแบบ Universal Design",
+    "description": "ให้คำปรึกษาและออกแบบผลิตภัณฑ์ บริการ และพื้นที่ที่ทุกคนเข้าถึงได้",
+    "features": [
+      "Accessibility Audit",
+      "UX/UI Design สำหรับคนพิการ",
+      "WCAG Compliance Review",
+      "Inclusive Design Workshop"
+    ]
+  },
+  {
+    "id": "assistive-tech",
+    "icon": "robot",
+    "title": "พัฒนาเทคโนโลยี Assistive",
+    "description": "ออกแบบและพัฒนาซอฟต์แวร์ แอปพลิเคชัน และอุปกรณ์ช่วยเหลือสำหรับคนพิการ",
+    "features": [
+      "Screen Reader & TTS Systems",
+      "Computer Vision for Blind",
+      "แอปสื่อสารสำหรับผู้พิการพูดไม่ได้",
+      "IoT อุปกรณ์ช่วยเหลือ"
+    ]
+  },
+  {
+    "id": "consulting",
+    "icon": "clipboard",
+    "title": "ให้คำปรึกษาองค์กร",
+    "description": "ช่วยองค์กรทั้งภาครัฐและเอกชนพัฒนานโยบายและสภาพแวดล้อมที่เป็นมิตรกับคนพิการ",
+    "features": [
+      "นโยบาย HR ด้านคนพิการ",
+      "Disability Inclusion Plan",
+      "การอบรมความตระหนักรู้",
+      "ติดตามและประเมินผล"
+    ]
+  },
+  {
+    "id": "training",
+    "icon": "school",
+    "title": "ฝึกอบรมและพัฒนาศักยภาพ",
+    "description": "หลักสูตรฝึกอบรมสำหรับนักวิจัย นักออกแบบ และผู้ให้บริการที่ทำงานกับคนพิการ",
+    "features": [
+      "หลักสูตร Disability Awareness",
+      "เทคนิคการสื่อสารกับคนพิการ",
+      "การใช้เทคโนโลยีช่วยเหลือ",
+      "In-house Training Program"
+    ]
+  },
+  {
+    "id": "evaluation",
+    "icon": "chart",
+    "title": "ประเมินและวัดผลโครงการ",
+    "description": "บริการประเมินผลโครงการและนโยบายด้านคนพิการอย่างครอบคลุมด้วยวิธีการที่ยึดหลักฐาน",
+    "features": [
+      "Program Evaluation",
+      "Social Impact Assessment",
+      "KPI Design สำหรับโปรแกรมคนพิการ",
+      "รายงานผลกระทบทางสังคม"
+    ]
+  }
+]

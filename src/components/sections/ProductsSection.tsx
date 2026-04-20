@@ -4,8 +4,10 @@ import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { PRODUCTS } from '@/lib/constants'
 import { PRODUCT_ICONS } from '@/components/ui/Icons'
+import type { Product } from '@/lib/types'
 
-export default function ProductsSection() {
+export default function ProductsSection({ products: productsProp }: { products?: Product[] } = {}) {
+  const products = productsProp ?? PRODUCTS
   return (
     <section
       id="products"
@@ -29,7 +31,7 @@ export default function ProductsSection() {
             gap: '24px',
           }}
         >
-          {PRODUCTS.map((product, i) => (
+          {products.map((product, i) => (
             <RevealOnScroll key={product.id} delay={i * 80}>
               <div
                 style={{

@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { anthropic, SYSTEM_PROMPT } from '@/lib/claude'
+import { anthropic } from '@/lib/claude'
+import { content } from '@/lib/content'
 
-// Simple in-memory rate limit (per IP, resets on server restart)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now()
-  const windowMs = 60 * 1000 // 1 minute
+  const windowMs = 60 * 1000
   const maxRequests = 10
 
   const entry = rateLimitMap.get(ip)
@@ -31,16 +31,19 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { messages } = await request.json()
+    const { messages, overrideSystemPrompt } = await request.json()
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: 'ข้อมูลไม่ถูกต้อง' }, { status: 400 })
     }
 
+    const chatbotConfig = await content.chatbot.get()
+    const systemPrompt = overrideSystemPrompt ?? chatbotConfig.systemPrompt
+
     const stream = await anthropic.messages.stream({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 1000,
-      system: SYSTEM_PROMPT,
+      model: chatbotConfig.model,
+      max_tokens: chatbotConfig.maxTokens,
+      system: systemPrompt,
       messages: messages.map((m: { role: string; content: string }) => ({
         role: m.role as 'user' | 'assistant',
         content: m.content,

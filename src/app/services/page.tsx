@@ -1,7 +1,9 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { SERVICES } from '@/lib/constants'
 import { SERVICE_ICONS } from '@/components/ui/Icons'
+import type { Service } from '@/lib/types'
 
 
 const ChatIcon = () => (
@@ -11,6 +13,12 @@ const ChatIcon = () => (
 )
 
 export default function ServicesPage() {
+  const [services, setServices] = useState<Service[]>(SERVICES)
+
+  useEffect(() => {
+    fetch('/api/content/services').then(r => r.json()).then(setServices).catch(() => {})
+  }, [])
+
   return (
     <div style={{ paddingTop: '70px', minHeight: '100vh' }}>
       <div
@@ -44,7 +52,7 @@ export default function ServicesPage() {
             gap: '28px',
           }}
         >
-          {SERVICES.map((service) => (
+          {services.map((service) => (
             <div
               key={service.id}
               className="service-card"

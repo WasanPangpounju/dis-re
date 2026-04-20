@@ -4,8 +4,10 @@ import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { SERVICES } from '@/lib/constants'
 import { SERVICE_ICONS } from '@/components/ui/Icons'
+import type { Service } from '@/lib/types'
 
-export default function ServicesSection() {
+export default function ServicesSection({ services: servicesProp }: { services?: Service[] } = {}) {
+  const services = servicesProp ?? SERVICES
   return (
     <section
       id="services"
@@ -29,7 +31,7 @@ export default function ServicesSection() {
             gap: '24px',
           }}
         >
-          {SERVICES.map((service, i) => (
+          {services.map((service, i) => (
             <RevealOnScroll key={service.id} delay={i * 80}>
               <div
                 className="service-card"

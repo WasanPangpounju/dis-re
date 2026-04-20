@@ -1,0 +1,32 @@
+{
+  "company": {
+    "name": "บริษัท การวิจัยนวัตกรรมเพื่อคนพิการ วิสาหกิจเพื่อสังคม จำกัด",
+    "shortName": "การวิจัยนวัตกรรมเพื่อคนพิการ",
+    "tagline": "นวัตกรรมเพื่อคนพิการทุกคน",
+    "description": "วิสาหกิจเพื่อสังคมที่มุ่งสร้างนวัตกรรมและงานวิจัย เพื่อยกระดับคุณภาพชีวิตคนพิการในประเทศไทยอย่างยั่งยืน",
+    "registrationNumber": "0735566002751",
+    "address": "19/11 ซอยประชาสุข ตำบลพระปฐมเจดีย์ อำเภอเมืองนครปฐม จ.นครปฐม 73000",
+    "phone": "095 194 6536",
+    "email": "anurak.new@gmail.com",
+    "accessibilityHotline": "095 194 6536",
+    "socialMedia": {
+      "facebook": "https://www.facebook.com/profile.php?id=100067779583763",
+      "line": "https://www.facebook.com/p/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B4%E0%B8%88%E0%B8%B1%E0%B8%A2%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%84%E0%B8%99%E0%B8%9E%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3-%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94-100067779583763/",
+      "youtube": "https://www.youtube.com/watch?v=f2gIgCMqICQ"
+    }
+  },
+  "stats": [
+    {
+      "number": "5",
+      "label": "โครงการวิจัย"
+    },
+    {
+      "number": "10",
+      "label": "ผลิตภัณฑ์และบริการ"
+    },
+    {
+      "number": "5,000+",
+      "label": "ผู้ได้รับประโยชน์"
+    }
+  ]
+}

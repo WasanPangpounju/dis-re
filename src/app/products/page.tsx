@@ -1,9 +1,17 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { PRODUCTS } from '@/lib/constants'
 import { PRODUCT_ICONS } from '@/components/ui/Icons'
+import type { Product } from '@/lib/types'
 
 export default function ProductsPage() {
+  const [products, setProducts] = useState<Product[]>(PRODUCTS)
+
+  useEffect(() => {
+    fetch('/api/content/products').then(r => r.json()).then(setProducts).catch(() => {})
+  }, [])
+
   return (
     <div style={{ paddingTop: '70px', minHeight: '100vh' }}>
       <div
@@ -37,7 +45,7 @@ export default function ProductsPage() {
             gap: '28px',
           }}
         >
-          {PRODUCTS.map((product) => (
+          {products.map((product) => (
             <div
               key={product.id}
               style={{
