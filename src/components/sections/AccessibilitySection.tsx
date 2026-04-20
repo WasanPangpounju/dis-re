@@ -48,7 +48,7 @@ export default function AccessibilitySection() {
                   style={{ marginBottom: '14px', color: 'var(--teal)' }}
                   aria-hidden="true"
                 >
-                  {ACCESSIBILITY_ICONS[feature.icon]}
+                  {ACCESSIBILITY_ICONS[feature.icon] ?? <span className="icon-emoji-fallback">{feature.icon}</span>}
                 </div>
                 <h3
                   style={{

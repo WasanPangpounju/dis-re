@@ -48,7 +48,7 @@ export default function PortfolioNewPage() {
   }
 
   return (
-    <div style={{ maxWidth: '700px' }}>
+    <div style={{ minWidth: 0 }}>
       <h1 style={{ fontSize: '26px', fontWeight: 700, color: '#111827', marginBottom: '24px', fontFamily: 'var(--font-kanit)' }}>เพิ่มผลงานใหม่</h1>
 
       <AdminCard>

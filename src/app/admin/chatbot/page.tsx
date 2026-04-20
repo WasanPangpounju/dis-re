@@ -89,7 +89,7 @@ export default function ChatbotPage() {
   if (loading) return <div style={{ fontFamily: 'var(--font-sarabun)' }}>กำลังโหลด...</div>
 
   return (
-    <div style={{ maxWidth: '800px' }}>
+    <div style={{ minWidth: 0 }}>
       <h1 style={{ fontSize: '26px', fontWeight: 700, color: '#111827', marginBottom: '24px', fontFamily: 'var(--font-kanit)' }}>Chat Bot Configuration</h1>
 
       <AdminCard title="การตั้งค่า Model">

@@ -84,7 +84,7 @@ export default function ServicesPage() {
                 }}
                 aria-hidden="true"
               >
-                {SERVICE_ICONS[service.icon]}
+                {SERVICE_ICONS[service.icon] ?? <span className="icon-emoji-fallback">{service.icon}</span>}
               </div>
               <h2
                 style={{

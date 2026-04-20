@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+.icon-emoji-fallback {
+  font-size: 52px;
+  line-height: 1;
+}
+
 :root {
   --navy: #0d2b45;
   --navy-mid: #1a4063;

@@ -95,7 +95,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         className="admin-mobile-header"
       >
         <button onClick={() => setMenuOpen(!menuOpen)}
-          style={{ background: 'none', border: 'none', fontSize: '24px', cursor: 'pointer', marginRight: '12px' }}>
+          style={{ background: 'none', border: 'none', fontSize: '24px', cursor: 'pointer', marginRight: '12px', marginBottom: '10px' }}>
           ☰
         </button>
         <span style={{ fontWeight: 700, fontFamily: 'var(--font-kanit)', fontSize: '16px' }}>Admin Panel</span>

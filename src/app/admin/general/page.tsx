@@ -56,7 +56,7 @@ export default function GeneralPage() {
   if (loading) return <div style={{ padding: '40px', fontFamily: 'var(--font-sarabun)' }}>กำลังโหลด...</div>
 
   return (
-    <div style={{ maxWidth: '800px' }}>
+    <div style={{ minWidth: 0 }}>
       <h1 style={{ fontSize: '26px', fontWeight: 700, color: '#111827', marginBottom: '24px', fontFamily: 'var(--font-kanit)' }}>ข้อมูลทั่วไป</h1>
 
       <AdminCard title="ข้อมูลบริษัท">

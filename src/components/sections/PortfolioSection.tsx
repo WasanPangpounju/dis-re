@@ -202,7 +202,7 @@ export default function PortfolioSection({ items: itemsProp }: { items?: Portfol
                     }}
                     aria-hidden="true"
                   >
-                    {PORTFOLIO_ICONS[item.icon]}
+                    {PORTFOLIO_ICONS[item.icon] ?? <span className="icon-emoji-fallback">{item.icon}</span>}
                   </div>
 
                   <div style={{ padding: '24px' }}>

@@ -93,7 +93,7 @@ export default function ProductsPage() {
                   {product.badge}
                 </span>
                 <div style={{ marginBottom: '16px', color: 'var(--teal)' }} aria-hidden="true">
-                  {PRODUCT_ICONS[product.icon]}
+                  {PRODUCT_ICONS[product.icon] ?? <span className="icon-emoji-fallback">{product.icon}</span>}
                 </div>
                 <h2
                   style={{

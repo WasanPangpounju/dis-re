@@ -26,6 +26,7 @@ export default function AdminButton({
       style={{
         ...styles[variant],
         padding: '10px 20px',
+        margin:'10px',
         borderRadius: '8px',
         fontSize: '15px',
         fontWeight: 600,

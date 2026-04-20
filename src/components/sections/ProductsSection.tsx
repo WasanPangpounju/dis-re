@@ -81,7 +81,7 @@ export default function ProductsSection({ products: productsProp }: { products?:
                     {product.badge}
                   </span>
                   <div style={{ marginBottom: '12px', color: 'var(--teal)' }} aria-hidden="true">
-                    {PRODUCT_ICONS[product.icon]}
+                    {PRODUCT_ICONS[product.icon] ?? <span className="icon-emoji-fallback">{product.icon}</span>}
                   </div>
                   <h3
                     style={{

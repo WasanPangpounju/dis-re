@@ -28,7 +28,7 @@ export default function ProductsListPage() {
   if (loading) return <div style={{ fontFamily: 'var(--font-sarabun)' }}>กำลังโหลด...</div>
 
   return (
-    <div style={{ maxWidth: '900px' }}>
+    <div style={{ minWidth: 0 }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
         <h1 style={{ fontSize: '26px', fontWeight: 700, color: '#111827', fontFamily: 'var(--font-kanit)' }}>ผลิตภัณฑ์</h1>
         <Link href="/admin/products/new"
