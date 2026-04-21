@@ -8,12 +8,20 @@ import { NAV_LINKS } from '@/lib/constants'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState<boolean | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
   }, [])
 
   useEffect(() => {
@@ -91,10 +99,9 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav role="navigation" aria-label="การนำทางหลัก" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <nav role="navigation" aria-label="การนำทางหลัก" className="flex items-center gap-1">
           <ul
-            className="hidden md:flex"
-            style={{ listStyle: 'none', margin: 0, padding: 0, gap: '4px', display: 'flex', alignItems: 'center' }}
+            style={{ display: isMobile === null ? 'none' : isMobile ? 'none' : 'flex', listStyle: 'none', margin: 0, padding: 0, gap: '4px', alignItems: 'center' }}
           >
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href
@@ -137,8 +144,8 @@ export default function Navbar() {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex"
             style={{
+              display: isMobile === null ? 'none' : isMobile ? 'none' : 'inline-flex',
               marginLeft: '12px',
               padding: '10px 20px',
               borderRadius: '10px',
@@ -148,8 +155,6 @@ export default function Navbar() {
               fontWeight: 700,
               fontSize: '15px',
               textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
               gap: '6px',
               transition: 'opacity 0.2s, transform 0.2s',
               whiteSpace: 'nowrap',
@@ -169,17 +174,16 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <button
-            className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? 'ปิดเมนู' : 'เปิดเมนู'}
             style={{
+              display: isMobile === null ? 'flex' : isMobile ? 'flex' : 'none',
               background: 'none',
               border: 'none',
               cursor: 'pointer',
               padding: '8px',
-              display: 'flex',
               flexDirection: 'column',
               gap: '5px',
             }}
@@ -215,6 +219,7 @@ export default function Navbar() {
         id="mobile-menu"
         role="navigation"
         aria-label="เมนูมือถือ"
+        className="md:hidden"
         style={{
           display: isOpen ? 'block' : 'none',
           borderTop: '1px solid rgba(255,255,255,0.1)',
