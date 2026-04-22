@@ -1,8 +1,26 @@
+export interface RagContext {
+  title: string
+  text: string
+  score: number
+  doc_id?: string
+  chunk_id?: string
+}
+
+export interface ChatResponse {
+  text: string
+  contexts?: RagContext[]
+  model?: string
+  mode?: 'rag' | 'direct'
+  error?: string
+}
+
 export interface Message {
   id: string
   role: 'user' | 'assistant'
   content: string
   timestamp: Date
+  contexts?: RagContext[]
+  mode?: 'rag' | 'direct'
 }
 
 export interface PortfolioItem {

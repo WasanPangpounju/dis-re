@@ -1,11 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import type { Message } from '@/lib/types'
-
-function generateId() {
-  return Math.random().toString(36).slice(2, 10)
-}
+import type { Message, ChatResponse } from '@/lib/types'
 
 export function useChat() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -16,7 +12,7 @@ export function useChat() {
     if (!text.trim() || isLoading) return
 
     const userMessage: Message = {
-      id: generateId(),
+      id: crypto.randomUUID(),
       role: 'user',
       content: text.trim(),
       timestamp: new Date(),
@@ -26,50 +22,41 @@ export function useChat() {
     setIsLoading(true)
     setError(null)
 
-    const assistantId = generateId()
-    const assistantMessage: Message = {
-      id: assistantId,
-      role: 'assistant',
-      content: '',
-      timestamp: new Date(),
-    }
-    setMessages((prev) => [...prev, assistantMessage])
-
     try {
-      const response = await fetch('/api/chat', {
+      const conversationHistory = [...messages, userMessage].map((m) => ({
+        role: m.role,
+        content: m.content,
+      }))
+
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          messages: [...messages, userMessage].map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
+          messages: conversationHistory,
+          overrideSystemPrompt: undefined,
         }),
       })
 
-      if (!response.ok) {
-        const errData = await response.json().catch(() => ({}))
-        throw new Error(errData.error || 'เกิดข้อผิดพลาดในการเชื่อมต่อ')
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ error: 'เกิดข้อผิดพลาด' }))
+        throw new Error(err.error ?? 'เกิดข้อผิดพลาด')
       }
 
-      const reader = response.body?.getReader()
-      if (!reader) throw new Error('ไม่สามารถอ่านข้อมูลได้')
+      const data: ChatResponse = await res.json()
 
-      const decoder = new TextDecoder()
-      let accumulated = ''
-
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-        accumulated += decoder.decode(value, { stream: true })
-        setMessages((prev) =>
-          prev.map((m) => (m.id === assistantId ? { ...m, content: accumulated } : m))
-        )
+      const assistantMessage: Message = {
+        id: crypto.randomUUID(),
+        role: 'assistant',
+        content: data.text ?? '',
+        timestamp: new Date(),
+        contexts: data.contexts,
+        mode: data.mode,
       }
+
+      setMessages((prev) => [...prev, assistantMessage])
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'เกิดข้อผิดพลาด'
       setError(msg)
-      setMessages((prev) => prev.filter((m) => m.id !== assistantId))
     } finally {
       setIsLoading(false)
     }
