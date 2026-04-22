@@ -43,24 +43,12 @@ export default function Footer({ company = COMPANY }: { company?: CompanyData })
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <div
-                style={{
-                  width: '44px',
-                  height: '44px',
-                  borderRadius: '12px',
-                  background: 'linear-gradient(135deg, #1B7E6A, #2DA88E)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '22px',
-                  fontFamily: 'var(--font-kanit)',
-                  fontWeight: 700,
-                  color: 'white',
-                }}
+              <img
+                src="/2.png"
+                alt=""
                 aria-hidden="true"
-              >
-                logo
-              </div>
+                style={{ width: '44px', height: '44px', borderRadius: '12px', objectFit: 'cover' }}
+              />
               <span
                 style={{
                   fontFamily: 'var(--font-kanit)',
