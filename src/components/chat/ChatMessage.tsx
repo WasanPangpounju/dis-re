@@ -58,6 +58,33 @@ export default function ChatMessage({ message }: ChatMessageProps) {
         }}
       >
         {message.content}
+        {message.contexts && message.contexts.length > 0 && (
+          <div style={{
+            marginTop: '8px',
+            paddingTop: '8px',
+            borderTop: '1px solid rgba(0,0,0,0.1)',
+          }}>
+            <p style={{
+              fontSize: '11px',
+              color: 'rgba(0,0,0,0.4)',
+              margin: '0 0 6px',
+            }}>
+              📚 แหล่งข้อมูล:
+            </p>
+            {message.contexts.slice(0, 2).map((ctx, i) => (
+              <div key={i} style={{
+                fontSize: '11px',
+                color: 'rgba(0,0,0,0.6)',
+                background: 'rgba(0,0,0,0.05)',
+                borderRadius: '6px',
+                padding: '4px 8px',
+                marginBottom: '4px',
+              }}>
+                {ctx.title}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )
