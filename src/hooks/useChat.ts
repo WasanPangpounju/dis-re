@@ -22,6 +22,9 @@ export function useChat() {
     setIsLoading(true)
     setError(null)
 
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 90000)
+
     try {
       const conversationHistory = [...messages, userMessage].map((m) => ({
         role: m.role,
@@ -35,6 +38,7 @@ export function useChat() {
           messages: conversationHistory,
           overrideSystemPrompt: undefined,
         }),
+        signal: controller.signal,
       })
 
       if (!res.ok) {
@@ -55,9 +59,14 @@ export function useChat() {
 
       setMessages((prev) => [...prev, assistantMessage])
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'เกิดข้อผิดพลาด'
-      setError(msg)
+      if (err instanceof Error && err.name === 'AbortError') {
+        setError('หมดเวลารอ กรุณาลองใหม่อีกครั้ง')
+      } else {
+        const msg = err instanceof Error ? err.message : 'เกิดข้อผิดพลาด'
+        setError(msg)
+      }
     } finally {
+      clearTimeout(timeoutId)
       setIsLoading(false)
     }
   }, [messages, isLoading])
