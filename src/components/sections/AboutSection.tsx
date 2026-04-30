@@ -151,9 +151,53 @@ export default function AboutSection() {
           <SectionHeader
             label="เกี่ยวกับเรา"
             title="วิสาหกิจเพื่อสังคมที่"
-            highlight="ขับเคลื่อนด้วยงานวิจัย"
-            description="เราเชื่อว่านวัตกรรมและงานวิจัยที่ดีสามารถเปลี่ยนแปลงชีวิตคนพิการได้อย่างแท้จริง ด้วยทีมนักวิจัย นักออกแบบ และผู้เชี่ยวชาญที่มีประสบการณ์มากกว่า 10 ปี"
-          />
+            highlight="ขับเคลื่อนโดยคนพิการเพื่อเพื่อนคนพิการ"
+            description="เราเชื่อว่านวัตกรรมสามารถเปลี่ยนแปลงชีวิตคนพิการได้อย่างแท้จริง ด้วยนักวจัย นักออกแบบ และผู้เชี่ยวชาญที่มีประสบการณ์มากกว่า 10 ปี"          />
+        </RevealOnScroll>
+
+        {/* Stats row */}
+        <RevealOnScroll>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "24px",
+              padding: "32px",
+              borderRadius: "16px",
+              background: "var(--white)",
+              border: "1px solid var(--border)",
+              marginBottom: "28px",
+            }}
+          >
+            {[
+              { num: "2566", label: "ปีที่ก่อตั้งบริษัท" },
+              { num: "2568", label: "จดทะเบียนวิสาหกิจเพื่อสังคม ภายใต้ สวส." },
+            ].map((item, i) => (
+              <div
+                key={item.num}
+                style={{
+                  paddingLeft: i !== 0 ? "24px" : 0,
+                  borderLeft: i !== 0 ? "1px solid var(--border)" : "none",
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-kanit)",
+                    fontSize: "40px",
+                    fontWeight: 700,
+                    color: "var(--teal)",
+                    lineHeight: 1,
+                    marginBottom: "6px",
+                  }}
+                >
+                  {item.num}
+                </div>
+                <div style={{ fontSize: "15px", color: "var(--text-min)", lineHeight: 1.5 }}>
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </RevealOnScroll>
 
         <div
@@ -218,56 +262,171 @@ export default function AboutSection() {
         </div>
 
         <RevealOnScroll>
-         <div
-  style={{
-    padding: '40px',
-    borderRadius: '20px',
-    background: 'linear-gradient(135deg, var(--navy), var(--navy-mid))',
-    color: 'white',
-    display: 'flex',         
-    flexDirection: 'column',  
-    alignItems: 'center',     
-    gap: '28px',
-  }}
->
-  {/* header: center */}
-  <div style={{ textAlign: 'center' }}>
-    <h3 style={{ fontFamily: 'var(--font-kanit)', fontWeight: 700, fontSize: '24px', marginBottom: '12px' }}>
-      จดทะเบียนในฐานะ<br /><span style={{ color: '#2DA88E' }}>วิสาหกิจเพื่อสังคม</span>
-    </h3>
-    <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, margin: 0 }}>
-      ภายใต้การกำกับของสำนักงานส่งเสริมวิสาหกิจเพื่อสังคม (สวส.)<br />
-      กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์
-    </p>
-  </div>
+          <div
+            style={{
+              padding: "40px",
+              borderRadius: "20px",
+              background:
+                "linear-gradient(135deg, var(--navy), var(--navy-mid))",
+              color: "white",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "28px",
+            }}
+          >
+            {/* header: center */}
+            <div style={{ textAlign: "center" }}>
+              <h3
+                style={{
+                  fontFamily: "var(--font-kanit)",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  marginBottom: "12px",
+                }}
+              >
+                จดทะเบียนในฐานะ
+                <br />
+                <span style={{ color: "#2DA88E" }}>วิสาหกิจเพื่อสังคม</span>
+              </h3>
+              <p
+                style={{
+                  fontSize: "16px",
+                  color: "rgba(255,255,255,0.75)",
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}
+              >
+                ภายใต้การกำกับของสำนักงานส่งเสริมวิสาหกิจเพื่อสังคม (สวส.)
+                <br />
+                กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์
+              </p>
+            </div>
 
-  {/* divider */}
-  <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.1)' }} />
+            {/* divider */}
+            <div
+              style={{
+                width: "100%",
+                height: "1px",
+                background: "rgba(255,255,255,0.1)",
+              }}
+            />
 
-  {/* 3 features */}
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', width: '100%' }}>
-    {[
-      { icon: <ClipboardIcon />, text: 'กำไรส่วนใหญ่นำกลับสู่สังคม' },
-      { icon: <BuildingIcon />,  text: 'โปร่งใส ตรวจสอบได้' },
-      { icon: <HandshakeIcon />, text: 'เป็นพาร์ตเนอร์กับ 20+ องค์กร' },
-    ].map((item, i) => (
-      <div
-        key={item.text}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '12px',
-          padding: '0 24px',
-          borderLeft: i !== 0 ? '1px solid rgba(255,255,255,0.1)' : 'none',
-        }}
-      >
-        <span style={{ color: 'rgba(255,255,255,0.85)', flexShrink: 0 }}>{item.icon}</span>
-        <span style={{ fontSize: '17px', color: 'rgba(255,255,255,0.85)' }}>{item.text}</span>
-      </div>
-    ))}
-  </div>
-</div>
+            {/* 3 features */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                width: "100%",
+              }}
+            >
+              {[
+                { icon: <ClipboardIcon />, text: "กำไรส่วนใหญ่นำกลับสู่สังคม" },
+                { icon: <BuildingIcon />, text: "โปร่งใส ตรวจสอบได้" },
+                {
+                  icon: <HandshakeIcon />,
+                  text: "เป็นพาร์ตเนอร์กับ 20+ องค์กร",
+                },
+              ].map((item, i) => (
+                <div
+                  key={item.text}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "12px",
+                    padding: "0 24px",
+                    borderLeft:
+                      i !== 0 ? "1px solid rgba(255,255,255,0.1)" : "none",
+                  }}
+                >
+                  <span
+                    style={{ color: "rgba(255,255,255,0.85)", flexShrink: 0 }}
+                  >
+                    {item.icon}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "17px",
+                      color: "rgba(255,255,255,0.85)",
+                    }}
+                  >
+                    {item.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </RevealOnScroll>
+
+        {/* Team section */}
+        <RevealOnScroll>
+          <div style={{ marginTop: "28px" }}>
+            <h3
+              style={{
+                fontFamily: "var(--font-kanit)",
+                fontWeight: 700,
+                fontSize: "22px",
+                color: "var(--navy)",
+                marginBottom: "20px",
+              }}
+            >
+              ทีมผู้ก่อตั้ง
+            </h3>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: "16px",
+              }}
+            >
+              {[
+                { img: "/width-346.webp",   name: "อนุรักษ์ ปฐมลิขิตกาญจน์", role: "ผู้ก่อตั้งบริษัท" },
+                { img: "/width-346-2.webp", name: "ธวัชพงศ์ หาเรือนโภค",      role: "ผู้ร่วมก่อตั้งบริษัท" },
+              ].map((person) => (
+                <div
+                  key={person.name}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "16px",
+                    padding: "20px 24px",
+                    borderRadius: "14px",
+                    background: "var(--cream)",
+                    border: "1px solid var(--border)",
+                  }}
+                >
+                  <img
+                    src={person.img}
+                    alt={person.name}
+                    style={{
+                      width: "48px",
+                      height: "48px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      flexShrink: 0,
+                    }}
+                  />
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-kanit)",
+                        fontWeight: 700,
+                        fontSize: "17px",
+                        color: "var(--navy)",
+                        marginBottom: "4px",
+                      }}
+                    >
+                      {person.name}
+                    </div>
+                    <div style={{ fontSize: "14px", color: "var(--text-mid)" }}>
+                      {person.role}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </RevealOnScroll>
       </div>
     </section>

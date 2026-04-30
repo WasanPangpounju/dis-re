@@ -85,14 +85,12 @@ export default function ContactSection({ company = COMPANY }: { company?: Compan
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      style={{ padding: '100px 24px', background: 'white' }}
+      style={{ padding: '60px 24px', background: 'white' }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <RevealOnScroll>
           <SectionHeader
             label="ติดต่อเรา"
-            title="พร้อม"
-            highlight="ให้ความช่วยเหลือ"
             description="ติดต่อทีมผู้เชี่ยวชาญของเราสำหรับคำปรึกษา ความร่วมมือ หรือสอบถามข้อมูลเพิ่มเติม"
           />
         </RevealOnScroll>

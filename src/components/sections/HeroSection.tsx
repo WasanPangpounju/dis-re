@@ -4,12 +4,6 @@ import Link from 'next/link'
 import { STATS } from '@/lib/constants'
 import type { Stat } from '@/lib/types'
 
-const MicroscopeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-    <path d="M200-120v-80h200v-80q-83 0-141.5-58.5T200-480q0-61 33.5-111t90.5-73q8-34 35.5-55t62.5-21l-22-62 38-14-14-36 76-28 12 38 38-14 110 300-38 14 14 38-76 28-12-38-38 14-24-66q-15 14-34.5 21t-39.5 5q-22-2-41-13.5T338-582q-27 16-42.5 43T280-480q0 50 35 85t85 35h320v80H520v80h240v80H200Zm346-458 36-14-68-188-38 14 70 188Zm-97.5-33.5Q460-623 460-640t-11.5-28.5Q437-680 420-680t-28.5 11.5Q380-657 380-640t11.5 28.5Q403-600 420-600t28.5-11.5ZM546-578Zm-126-62Zm0 0Z"/>
-  </svg>
-)
-
 const ChatIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor">
     <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/>
@@ -86,63 +80,63 @@ export default function HeroSection({ stats: statsProp }: { stats?: Stat[] } = {
             marginBottom: '36px',
           }}
         >
-          วิสาหกิจเพื่อสังคมที่มุ่งสร้างนวัตกรรมและงานวิจัย เพื่อยกระดับคุณภาพชีวิตคนพิการในประเทศไทย
-          ด้วยเทคโนโลยีและการออกแบบที่ครอบคลุมทุกคน
+          วิสาหกิจเพื่อสังคมที่มุ่งสร้างนวัตกรรม เพื่อยกระดับคุณภาพชีวิตคนพิการในประเทศไทยอย่างยั่งยืน
         </p>
 
         {/* CTA Buttons */}
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-          <Link
-            href="/portfolio"
-            style={{
-              padding: '16px 32px',
-              borderRadius: '12px',
-              background: 'linear-gradient(135deg, #1B7E6A, #2DA88E)',
-              color: 'white',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-sarabun)',
-              fontWeight: 700,
-              fontSize: '18px',
-              transition: 'opacity 0.2s, transform 0.2s',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = '0.9'
-              e.currentTarget.style.transform = 'translateY(-2px)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = '1'
-              e.currentTarget.style.transform = 'translateY(0)'
-            }}
-          >
-            <MicroscopeIcon /> ดูผลงานวิจัย
-          </Link>
+        <div
+          className="hero-buttons"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '10px',
+          }}
+        >
+          {[
+            { href: '/portfolio/activities', label: 'กิจกรรมที่ผ่านมา', primary: true },
+            { href: '/services',  label: 'บริการของเรา',      primary: false },
+            { href: '/products/blind-help',  label: 'Blind Help',         primary: false },
+          ].map((btn) => (
+            <Link
+              key={btn.href}
+              href={btn.href}
+              style={{
+                padding: '12px 22px',
+                borderRadius: '12px',
+                background: btn.primary ? 'linear-gradient(135deg, #1B7E6A, #2DA88E)' : 'transparent',
+                color: 'white',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-sarabun)',
+                fontWeight: 700,
+                fontSize: '16px',
+                border: btn.primary ? 'none' : '2px solid rgba(255,255,255,0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                transition: 'opacity 0.2s, transform 0.2s',
+              }}
+            >
+              {btn.label}
+            </Link>
+          ))}
           <Link
             href="/#chatbot"
             style={{
-              padding: '16px 32px',
+              padding: '12px 22px',
               borderRadius: '12px',
               background: 'transparent',
               color: 'white',
               textDecoration: 'none',
               fontFamily: 'var(--font-sarabun)',
               fontWeight: 700,
-              fontSize: '18px',
+              fontSize: '16px',
               border: '2px solid rgba(255,255,255,0.4)',
-              transition: 'border-color 0.2s, transform 0.2s',
-              display: 'inline-flex',
+              display: 'flex',
               alignItems: 'center',
+              justifyContent: 'center',
               gap: '8px',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.8)'
-              e.currentTarget.style.transform = 'translateY(-2px)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)'
-              e.currentTarget.style.transform = 'translateY(0)'
+              transition: 'border-color 0.2s, transform 0.2s',
             }}
           >
             <ChatIcon /> ถามเรื่องสุขภาพ

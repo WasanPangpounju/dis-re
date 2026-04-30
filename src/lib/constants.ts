@@ -7,12 +7,12 @@ export const COMPANY = {
   description:
     'วิสาหกิจเพื่อสังคมที่มุ่งสร้างนวัตกรรมและงานวิจัย เพื่อยกระดับคุณภาพชีวิตคนพิการในประเทศไทยอย่างยั่งยืน',
   registrationNumber: '0105567XXXXX',
-  address: '123 ถนนนวัตกรรม แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900',
-  phone: '02-xxx-xxxx',
-  email: 'info@disabilityresearch.co.th',
+  address: 'ที่อยู่ 19/11 ซอยประชาสุข ตำบลพระปฐมเจดีย์ อำเภอเมืองนครปฐม จังหวัดนครปฐม 73000',
+  phone: '095 194 6536',
+  email: 'innoredis@gmail.com',
   accessibilityHotline: '0800-xxx-xxx',
   socialMedia: {
-    facebook: 'https://facebook.com/',
+    facebook: 'Facebook https://www.facebook.com/profile.php?id=100067779583763',
     line: 'https://line.me/',
     youtube: 'https://youtube.com/',
   },
@@ -260,9 +260,9 @@ export const ACCESSIBILITY_FEATURES: AccessibilityFeature[] = [
 ]
 
 export const NAV_LINKS = [
-  { href: '/portfolio', label: 'ผลงาน' },
-  { href: '/services', label: 'บริการ' },
-  { href: '/products', label: 'ผลิตภัณฑ์' },
-  { href: '/#chatbot', label: 'Chat Bot' },
-  { href: '/contact', label: 'ติดต่อ' },
+  { href: '/about',                      label: 'เกี่ยวกับเรา' },
+  { href: '/portfolio',                  label: 'ผลงาน' },
+  { href: '/services',                   label: 'บริการ' },
+  { href: '/products/blind-help',        label: 'ผลิตภัณฑ์' },
+  { href: '/contact',                    label: 'ติดต่อเรา' },
 ]

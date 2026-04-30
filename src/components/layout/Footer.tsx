@@ -159,28 +159,7 @@ export default function Footer({ company = COMPANY }: { company?: CompanyData })
               >
                 <EmailIcon />{company.email}
               </a>
-              <div
-                style={{
-                  marginTop: '8px',
-                  padding: '12px',
-                  borderRadius: '8px',
-                  background: 'rgba(45,168,142,0.15)',
-                  border: '1px solid rgba(45,168,142,0.3)',
-                }}
-              >
-                <p style={{ fontSize: '15px', color: '#2DA88E', margin: 0, fontWeight: 600 }}>
-                  สายด่วนความพิการ
-                </p>
-                <a
-                  href={`tel:${company.accessibilityHotline}`}
-                  style={{ color: 'white', textDecoration: 'none', fontSize: '18px', fontWeight: 700 }}
-                >
-                  {company.accessibilityHotline}
-                </a>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', margin: '4px 0 0' }}>
-                  บริการฟรี ทุกวัน 08:00–20:00
-                </p>
-              </div>
+            
             </div>
           </address>
         </div>

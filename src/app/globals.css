@@ -149,6 +149,18 @@ body {
   transform: scaleX(1);
 }
 
+@media (max-width: 480px) {
+  .hero-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 639px) {
+  .health-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

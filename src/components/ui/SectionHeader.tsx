@@ -1,9 +1,10 @@
 interface SectionHeaderProps {
   label?: string
-  title: string
+  title?: string
   highlight?: string
   description?: string
   center?: boolean
+  className?: string
 }
 
 export default function SectionHeader({
@@ -12,11 +13,12 @@ export default function SectionHeader({
   highlight,
   description,
   center = true,
+  className,
 }: SectionHeaderProps) {
   const titleParts = highlight ? title.split(highlight) : [title]
 
   return (
-    <div style={{ textAlign: center ? 'center' : 'left', marginBottom: '48px' }}>
+    <div className={className} style={{ textAlign: center ? 'center' : 'left', marginBottom: '48px' }}>
       {label && (
         <span
           style={{
