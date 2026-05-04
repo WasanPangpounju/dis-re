@@ -67,7 +67,7 @@ export default function ChatBotSection() {
       id="chatbot"
       aria-labelledby="chatbot-heading"
       style={{
-        padding: '100px 24px',
+        padding: 'clamp(60px, 8vw, 100px) clamp(16px, 4vw, 24px)',
         background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%)',
       }}
     >
@@ -107,7 +107,7 @@ export default function ChatBotSection() {
           </div>
         </RevealOnScroll>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '48px', alignItems: 'start' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-start">
           {/* Info */}
           <RevealOnScroll>
             <div>
@@ -175,7 +175,7 @@ export default function ChatBotSection() {
                 boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
                 display: 'flex',
                 flexDirection: 'column',
-                height: '480px',
+                height: 'clamp(360px, 50vh, 480px)',
               }}
             >
               {/* Header */}

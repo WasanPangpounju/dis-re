@@ -144,7 +144,7 @@ export default function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      style={{ padding: "100px 24px", background: "white" }}
+      style={{ padding: "clamp(60px, 8vw, 100px) clamp(16px, 4vw, 24px)", background: "white" }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <RevealOnScroll>
@@ -264,7 +264,7 @@ export default function AboutSection() {
         <RevealOnScroll>
           <div
             style={{
-              padding: "40px",
+              padding: "clamp(24px, 4vw, 40px)",
               borderRadius: "20px",
               background:
                 "linear-gradient(135deg, var(--navy), var(--navy-mid))",
@@ -313,44 +313,23 @@ export default function AboutSection() {
             />
 
             {/* 3 features */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                width: "100%",
-              }}
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-3 w-full">
               {[
                 { icon: <ClipboardIcon />, text: "กำไรส่วนใหญ่นำกลับสู่สังคม" },
-                { icon: <BuildingIcon />, text: "โปร่งใส ตรวจสอบได้" },
-                {
-                  icon: <HandshakeIcon />,
-                  text: "เป็นพาร์ตเนอร์กับ 20+ องค์กร",
-                },
+                { icon: <BuildingIcon />,   text: "โปร่งใส ตรวจสอบได้" },
+                { icon: <HandshakeIcon />,  text: "เป็นพาร์ตเนอร์กับ 20+ องค์กร" },
               ].map((item, i) => (
                 <div
                   key={item.text}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "12px",
-                    padding: "0 24px",
-                    borderLeft:
-                      i !== 0 ? "1px solid rgba(255,255,255,0.1)" : "none",
-                  }}
+                  className={[
+                    "flex items-center gap-3 py-3 px-6",
+                    i !== 0 ? "" : "",
+                  ].join(" ")}
                 >
-                  <span
-                    style={{ color: "rgba(255,255,255,0.85)", flexShrink: 0 }}
-                  >
+                  <span style={{ color: "rgba(255,255,255,0.85)", flexShrink: 0 }}>
                     {item.icon}
                   </span>
-                  <span
-                    style={{
-                      fontSize: "17px",
-                      color: "rgba(255,255,255,0.85)",
-                    }}
-                  >
+                  <span style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)" }}>
                     {item.text}
                   </span>
                 </div>

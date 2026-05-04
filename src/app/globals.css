@@ -20,6 +20,13 @@
   --border: #e0eaf0;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,6 +41,7 @@ body {
   font-family: var(--font-sarabun), sans-serif;
   font-size: 18px;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 /* Focus styles for accessibility */
@@ -155,9 +163,31 @@ body {
   }
 }
 
-@media (max-width: 639px) {
+.health-features-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
   .health-features-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 639px) {
+  .about-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-feature-card {
+    justify-content: flex-start !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .about-feature-item {
+    border-left: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px !important;
   }
 }
 

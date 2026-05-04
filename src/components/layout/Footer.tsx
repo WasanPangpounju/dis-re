@@ -66,9 +66,21 @@ export default function Footer({ company = COMPANY }: { company?: CompanyData })
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {[
-                { href: company.socialMedia.facebook, label: 'Facebook', icon: 'f' },
-                { href: company.socialMedia.line, label: 'Line', icon: 'L' },
-                { href: company.socialMedia.youtube, label: 'YouTube', icon: '▶' },
+                { href: company.socialMedia.facebook, label: 'Facebook', icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                )},
+                { href: company.socialMedia.line, label: 'Line', icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.952 12.417c0-4.322-4.335-7.833-9.663-7.833S.625 8.095.625 12.417c0 3.874 3.434 7.117 8.075 7.731.314.068.742.207.851.476.097.244.063.626.031.872l-.138.826c-.042.244-.194.957.838.521 1.033-.435 5.566-3.277 7.595-5.609 1.4-1.538 2.075-3.095 2.075-4.817z"/>
+                  </svg>
+                )},
+                { href: company.socialMedia.youtube, label: 'YouTube', icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+                  </svg>
+                )},
               ].map((social) => (
                 <a
                   key={social.label}

@@ -68,7 +68,6 @@ export default function GeneralPage() {
         <AdminTextarea label="ที่อยู่" value={data.company.address} onChange={v => setCompany('address', v)} rows={3} />
         <AdminInput label="โทรศัพท์" value={data.company.phone} onChange={v => setCompany('phone', v)} />
         <AdminInput label="อีเมล" value={data.company.email} onChange={v => setCompany('email', v)} type="email" />
-        <AdminInput label="สายด่วน Accessibility" value={data.company.accessibilityHotline} onChange={v => setCompany('accessibilityHotline', v)} />
       </AdminCard>
 
       <AdminCard title="สถิติ">

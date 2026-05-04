@@ -27,20 +27,31 @@ export interface PortfolioItem {
   id: string
   category: string
   categoryLabel: string
-  icon: string
+  image?: string
   bgColor: string
   title: string
   description: string
-  year: string
+  year?: string
   team?: string
   award?: string
   reach?: string
   status?: string
 }
 
+export interface Activity {
+  id: string
+  title: string
+  description: string
+  date: string
+  location?: string
+  image?: string
+  category?: string
+  categoryLabel?: string
+}
+
 export interface Service {
   id: string
-  icon: string
+  image?: string
   title: string
   description: string
   features: string[]
@@ -48,7 +59,8 @@ export interface Service {
 
 export interface Product {
   id: string
-  icon: string
+  icon?: string
+  image?:string
   title: string
   subtitle: string
   description: string

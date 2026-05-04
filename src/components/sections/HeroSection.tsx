@@ -15,8 +15,8 @@ export default function HeroSection({ stats: statsProp }: { stats?: Stat[] } = {
   return (
     <section
       aria-label="แบนเนอร์หลัก"
-      className="flex flex-col-reverse lg:flex-row"
-      style={{ paddingTop: '70px'}}
+      className="flex flex-col-reverse lg:flex-row w-full min-h-screen"
+      style={{ paddingTop: '70px', marginLeft: 0, width: '100%', position: 'relative', left: 0 }}
     >
       {/* Top/Left — text */}
       <div
@@ -93,7 +93,7 @@ export default function HeroSection({ stats: statsProp }: { stats?: Stat[] } = {
           }}
         >
           {[
-            { href: '/portfolio/activities', label: 'กิจกรรมที่ผ่านมา', primary: true },
+            { href: '/portfolio?filter=activity', label: 'กิจกรรมที่ผ่านมา', primary: true },
             { href: '/services',  label: 'บริการของเรา',      primary: false },
             { href: '/products/blind-help',  label: 'Blind Help',         primary: false },
           ].map((btn) => (
@@ -177,16 +177,13 @@ export default function HeroSection({ stats: statsProp }: { stats?: Stat[] } = {
 
       {/* Bottom/Right — image */}
       <div
-        className="w-full lg:w-[55%]"
+        className="w-full lg:w-[55%] min-h-[40vh] lg:min-h-screen"
         style={{
-          overflow: 'hidden',
           backgroundImage: "url('/1.jpg')",
-           boxShadow: '0 25px 60px rgba(0,0,0,0.3)',
-          backgroundSize: 'contain',
+          backgroundSize: '70%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundColor: '#fff',
-          minHeight: '500px',
+          backgroundColor: '#ffffff',
         }}
         aria-hidden="true"
       />

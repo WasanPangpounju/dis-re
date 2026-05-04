@@ -1,6 +1,6 @@
-import { COMPANY, STATS, PORTFOLIO_ITEMS, SERVICES, PRODUCTS } from './constants'
+import { COMPANY, STATS, PORTFOLIO_ITEMS, SERVICES, PRODUCTS, ACTIVITIES } from './constants'
 
-export type ContentKey = 'general' | 'portfolio' | 'services' | 'products' | 'chatbot'
+export type ContentKey = 'general' | 'portfolio' | 'services' | 'products' | 'chatbot' | 'activities'
 
 export interface GeneralContent {
   company: typeof COMPANY
@@ -22,6 +22,7 @@ const DEFAULTS: Record<ContentKey, unknown> = {
   portfolio: PORTFOLIO_ITEMS,
   services: SERVICES,
   products: PRODUCTS,
+  activities: ACTIVITIES,
   chatbot: {
     model: 'claude-sonnet-4-6',
     maxTokens: 1000,
@@ -98,6 +99,10 @@ export const content = {
   products: {
     get: () => readContent<typeof PRODUCTS>('products'),
     set: (data: typeof PRODUCTS) => writeContent('products', data),
+  },
+  activities: {
+    get: () => readContent<typeof ACTIVITIES>('activities'),
+    set: (data: typeof ACTIVITIES) => writeContent('activities', data),
   },
   chatbot: {
     get: () => readContent<ChatbotConfig>('chatbot'),

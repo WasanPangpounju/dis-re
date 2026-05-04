@@ -85,7 +85,7 @@ export default function ContactSection({ company = COMPANY }: { company?: Compan
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      style={{ padding: '60px 24px', background: 'white' }}
+      style={{ padding: 'clamp(40px, 6vw, 60px) clamp(16px, 4vw, 24px)', background: 'white' }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <RevealOnScroll>
@@ -95,7 +95,7 @@ export default function ContactSection({ company = COMPANY }: { company?: Compan
           />
         </RevealOnScroll>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '48px', alignItems: 'start' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-12 items-start">
           {/* Info */}
           <RevealOnScroll>
             <div>
@@ -103,7 +103,7 @@ export default function ContactSection({ company = COMPANY }: { company?: Compan
                 { icon: <LocationIcon />, label: 'ที่อยู่', value: company.address },
                 { icon: <PhoneIcon />, label: 'โทรศัพท์', value: company.phone, href: `tel:${company.phone}` },
                 { icon: <EmailIcon />, label: 'อีเมล', value: company.email, href: `mailto:${company.email}` },
-                { icon: <SosIcon />, label: 'สายด่วนความพิการ', value: company.accessibilityHotline, href: `tel:${company.accessibilityHotline}` },
+                
               ].map((item) => (
                 <div
                   key={item.label}
@@ -158,7 +158,7 @@ export default function ContactSection({ company = COMPANY }: { company?: Compan
               noValidate
               style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
             >
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: '16px' }}>
                 <div>
                   <label htmlFor="name" style={{ display: 'block', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>
                     ชื่อ-นามสกุล <span style={{ color: 'red' }} aria-hidden="true">*</span>
@@ -193,7 +193,7 @@ export default function ContactSection({ company = COMPANY }: { company?: Compan
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: '16px' }}>
                 <div>
                   <label htmlFor="phone" style={{ display: 'block', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>
                     เบอร์โทรศัพท์

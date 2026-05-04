@@ -12,7 +12,7 @@ export default function ConditionalLayout({ children, company }: { children: Rea
     <>
       {!isAdmin && <SkipLink />}
       {!isAdmin && <Navbar />}
-      <main id="main-content">{children}</main>
+      <main id="main-content" style={{ padding: 0, margin: 0, maxWidth: 'none' }}>{children}</main>
       {!isAdmin && <Footer company={company} />}
       {!isAdmin && <ChatWidget />}
     </>

@@ -1,4 +1,4 @@
-import type { PortfolioItem, Service, Product, AccessibilityFeature, Stat } from './types'
+import type { PortfolioItem, Service, Product, AccessibilityFeature, Stat, Activity } from './types'
 
 export const COMPANY = {
   name: 'บริษัท การวิจัยนวัตกรรมเพื่อคนพิการ วิสาหกิจเพื่อสังคม จำกัด',
@@ -29,7 +29,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'vision-ai',
     category: 'research',
     categoryLabel: 'วิจัย',
-    icon: 'microscope',
+    image: '/portfolio/vision-ai.jpg',
     bgColor: 'from-teal-50 to-teal-100',
     title: 'ระบบนำทางสำหรับผู้พิการทางสายตาด้วย AI',
     description:
@@ -41,7 +41,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'braille-audio',
     category: 'product',
     categoryLabel: 'ผลิตภัณฑ์',
-    icon: 'headphone',
+    image: '/portfolio/braille-audio.jpg',
     bgColor: 'from-amber-50 to-amber-100',
     title: 'หูฟังแปลงเสียงอักษรเบรลล์',
     description:
@@ -53,7 +53,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'health-project',
     category: 'community',
     categoryLabel: 'ชุมชน',
-    icon: 'community',
+    image: '/portfolio/health-project.jpg',
     bgColor: 'from-indigo-50 to-indigo-100',
     title: 'โครงการ "สุขภาพดีไม่มีอุปสรรค"',
     description:
@@ -65,7 +65,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'national-award',
     category: 'award',
     categoryLabel: 'รางวัล',
-    icon: 'trophy',
+    image: '/portfolio/national-award.jpg',
     bgColor: 'from-red-50 to-red-100',
     title: 'รางวัลนวัตกรรมเพื่อสังคม ระดับชาติ 2566',
     description:
@@ -77,7 +77,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'mental-health',
     category: 'research',
     categoryLabel: 'วิจัย',
-    icon: 'brain',
+    image: '/portfolio/mental-health.jpg',
     bgColor: 'from-teal-50 to-emerald-100',
     title: 'การวิจัยความต้องการด้านสุขภาพจิตคนพิการ',
     description:
@@ -89,7 +89,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 'digital-classroom',
     category: 'community',
     categoryLabel: 'ชุมชน',
-    icon: 'book',
+    image: '/portfolio/digital-classroom.jpg',
     bgColor: 'from-violet-50 to-indigo-100',
     title: 'ห้องเรียนดิจิทัลสำหรับนักเรียนพิการ',
     description:
@@ -102,7 +102,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 export const SERVICES: Service[] = [
   {
     id: 'research',
-    icon: 'microscope',
+    image: '/services/research.jpg',
     title: 'วิจัยและพัฒนาเฉพาะทาง',
     description:
       'บริการวิจัยเชิงประยุกต์ด้านนวัตกรรมสำหรับคนพิการ ทั้งด้านเทคโนโลยี สุขภาพ และการออกแบบ',
@@ -115,7 +115,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'universal-design',
-    icon: 'accessibility',
+    image: '/services/universal-design.jpg',
     title: 'ออกแบบ Universal Design',
     description:
       'ให้คำปรึกษาและออกแบบผลิตภัณฑ์ บริการ และพื้นที่ที่ทุกคนเข้าถึงได้',
@@ -128,7 +128,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'assistive-tech',
-    icon: 'robot',
+    image: '/services/assistive-tech.jpg',
     title: 'พัฒนาเทคโนโลยี Assistive',
     description:
       'ออกแบบและพัฒนาซอฟต์แวร์ แอปพลิเคชัน และอุปกรณ์ช่วยเหลือสำหรับคนพิการ',
@@ -141,7 +141,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'consulting',
-    icon: 'clipboard',
+    image: '/services/consulting.jpg',
     title: 'ให้คำปรึกษาองค์กร',
     description:
       'ช่วยองค์กรทั้งภาครัฐและเอกชนพัฒนานโยบายและสภาพแวดล้อมที่เป็นมิตรกับคนพิการ',
@@ -154,7 +154,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'training',
-    icon: 'school',
+    image: '/services/training.jpg',
     title: 'ฝึกอบรมและพัฒนาศักยภาพ',
     description:
       'หลักสูตรฝึกอบรมสำหรับนักวิจัย นักออกแบบ และผู้ให้บริการที่ทำงานกับคนพิการ',
@@ -167,7 +167,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'evaluation',
-    icon: 'chart',
+    image: '/services/evaluation.jpg',
     title: 'ประเมินและวัดผลโครงการ',
     description:
       'บริการประเมินผลโครงการและนโยบายด้านคนพิการอย่างครอบคลุมด้วยวิธีการที่ยึดหลักฐาน',
@@ -258,6 +258,8 @@ export const ACCESSIBILITY_FEATURES: AccessibilityFeature[] = [
     description: 'เนื้อหาภาษาไทยทั้งหมด รองรับฟอนต์ขนาดใหญ่',
   },
 ]
+
+export const ACTIVITIES: Activity[] = []
 
 export const NAV_LINKS = [
   { href: '/about',                      label: 'เกี่ยวกับเรา' },

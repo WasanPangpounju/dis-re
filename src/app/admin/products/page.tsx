@@ -38,6 +38,9 @@ export default function ProductsListPage() {
       </div>
 
       <div style={{ background: 'white', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
+        {items.length === 0 && (
+          <div style={{ padding: '40px', textAlign: 'center', color: '#9ca3af', fontFamily: 'var(--font-sarabun)' }}>ไม่มีข้อมูล</div>
+        )}
         {items.map(item => (
           <div key={item.id} style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', borderBottom: '1px solid #f3f4f6' }}>
             <div style={{ flex: 1 }}>

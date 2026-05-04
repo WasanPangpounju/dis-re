@@ -1,55 +1,73 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { SERVICES } from '@/lib/constants'
-import { SERVICE_ICONS } from '@/components/ui/Icons'
-import type { Service } from '@/lib/types'
-
+import { useState, useEffect } from "react";
+import { SERVICES } from "@/lib/constants";
+import { SERVICE_ICONS } from "@/components/ui/Icons";
+import type { Service } from "@/lib/types";
 
 const ChatIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="20px"
+    viewBox="0 -960 960 960"
+    width="20px"
+    fill="currentColor"
+  >
     <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
   </svg>
-)
+);
 
 export default function ServicesPage() {
-  const [services, setServices] = useState<Service[]>(SERVICES)
+  const [services, setServices] = useState<Service[]>(SERVICES);
 
   useEffect(() => {
-    fetch('/api/content/services').then(r => r.json()).then(setServices).catch(() => {})
-  }, [])
+    fetch("/api/content/services")
+      .then((r) => r.json())
+      .then(setServices)
+      .catch(() => {});
+  }, []);
 
   return (
-    <div style={{ paddingTop: '70px', minHeight: '100vh' }}>
+    <div style={{ paddingTop: "70px", minHeight: "100vh" }}>
       <div
         style={{
-          background: 'linear-gradient(135deg, var(--navy), var(--navy-mid))',
-          padding: '80px 24px',
-          textAlign: 'center',
+          background: "linear-gradient(135deg, var(--navy), var(--navy-mid))",
+          padding: "80px 24px",
+          textAlign: "center",
         }}
       >
         <h1
           style={{
-            fontFamily: 'var(--font-kanit)',
+            fontFamily: "var(--font-kanit)",
             fontWeight: 700,
-            fontSize: 'clamp(32px, 5vw, 52px)',
-            color: 'white',
-            margin: '0 0 16px',
+            fontSize: "clamp(32px, 5vw, 52px)",
+            color: "white",
+            margin: "0 0 16px",
           }}
         >
-          บริการ<span style={{ color: '#2DA88E' }}>ของเรา</span>
+          บริการ<span style={{ color: "#2DA88E" }}>ของเรา</span>
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '18px', maxWidth: '560px', margin: '0 auto' }}>
-          บริการครบวงจรด้านนวัตกรรมสำหรับคนพิการ ตั้งแต่วิจัย ออกแบบ พัฒนา จนถึงประเมินผล
+        <p
+          style={{
+            color: "rgba(255,255,255,0.75)",
+            fontSize: "18px",
+            maxWidth: "560px",
+            margin: "0 auto",
+          }}
+        >
+          บริการครบวงจรด้านนวัตกรรมสำหรับคนพิการ ตั้งแต่วิจัย ออกแบบ พัฒนา
+          จนถึงประเมินผล
         </p>
       </div>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 24px' }}>
+      <div
+        style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 24px" }}
+      >
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '28px',
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "28px",
           }}
         >
           {services.map((service) => (
@@ -57,17 +75,18 @@ export default function ServicesPage() {
               key={service.id}
               className="service-card"
               style={{
-                background: 'white',
-                borderRadius: '16px',
-                border: '1px solid var(--border)',
-                padding: '36px',
-                transition: 'box-shadow 0.25s ease',
+                background: "white",
+                borderRadius: "16px",
+                border: "1px solid var(--border)",
+                padding: "36px",
+                transition: "box-shadow 0.25s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(13,43,69,0.1)'
+                e.currentTarget.style.boxShadow =
+                  "0 8px 32px rgba(13,43,69,0.1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = 'none'
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               <div
@@ -84,36 +103,52 @@ export default function ServicesPage() {
                 }}
                 aria-hidden="true"
               >
-                {SERVICE_ICONS[service.icon] ?? <span className="icon-emoji-fallback">{service.icon}</span>}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <h2
                 style={{
-                  fontFamily: 'var(--font-kanit)',
+                  fontFamily: "var(--font-kanit)",
                   fontWeight: 700,
-                  fontSize: '22px',
-                  color: 'var(--navy)',
-                  marginBottom: '12px',
+                  fontSize: "22px",
+                  color: "var(--navy)",
+                  marginBottom: "12px",
                 }}
               >
                 {service.title}
               </h2>
-              <p style={{ fontSize: '17px', color: 'var(--text-mid)', lineHeight: 1.8, marginBottom: '20px' }}>
+              <p
+                style={{
+                  fontSize: "17px",
+                  color: "var(--text-mid)",
+                  lineHeight: 1.8,
+                  marginBottom: "20px",
+                }}
+              >
                 {service.description}
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {service.features.map((feature) => (
                   <li
                     key={feature}
                     style={{
-                      display: 'flex',
-                      gap: '10px',
-                      marginBottom: '8px',
-                      fontSize: '16px',
-                      color: 'var(--text-dark)',
-                      alignItems: 'flex-start',
+                      display: "flex",
+                      gap: "10px",
+                      marginBottom: "8px",
+                      fontSize: "16px",
+                      color: "var(--text-dark)",
+                      alignItems: "flex-start",
                     }}
                   >
-                    <span style={{ color: 'var(--teal)', fontWeight: 700 }} aria-hidden="true">✓</span>
+                    <span
+                      style={{ color: "var(--teal)", fontWeight: 700 }}
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
                     {feature}
                   </li>
                 ))}
@@ -125,47 +160,53 @@ export default function ServicesPage() {
         {/* CTA */}
         <div
           style={{
-            marginTop: '60px',
-            padding: '48px',
-            borderRadius: '20px',
-            background: 'linear-gradient(135deg, var(--navy), var(--navy-mid))',
-            textAlign: 'center',
+            marginTop: "60px",
+            padding: "48px",
+            borderRadius: "20px",
+            background: "linear-gradient(135deg, var(--navy), var(--navy-mid))",
+            textAlign: "center",
           }}
         >
           <h2
             style={{
-              fontFamily: 'var(--font-kanit)',
+              fontFamily: "var(--font-kanit)",
               fontWeight: 700,
-              fontSize: '28px',
-              color: 'white',
-              marginBottom: '12px',
+              fontSize: "28px",
+              color: "white",
+              marginBottom: "12px",
             }}
           >
             สนใจบริการของเรา?
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '18px', marginBottom: '28px' }}>
+          <p
+            style={{
+              color: "rgba(255,255,255,0.75)",
+              fontSize: "18px",
+              marginBottom: "28px",
+            }}
+          >
             ติดต่อทีมของเราเพื่อรับคำปรึกษาฟรีและใบเสนอราคา
           </p>
           <a
             href="/contact"
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '14px 32px',
-              borderRadius: '12px',
-              background: 'linear-gradient(135deg, #D4A843, #F0C96B)',
-              color: '#0D2B45',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-sarabun)',
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "14px 32px",
+              borderRadius: "12px",
+              background: "linear-gradient(135deg, #D4A843, #F0C96B)",
+              color: "#0D2B45",
+              textDecoration: "none",
+              fontFamily: "var(--font-sarabun)",
               fontWeight: 700,
-              fontSize: '18px',
+              fontSize: "18px",
             }}
           >
-            <ChatIcon/> ติดต่อเรา
+            <ChatIcon /> ติดต่อเรา
           </a>
         </div>
       </div>
     </div>
-  )
+  );
 }

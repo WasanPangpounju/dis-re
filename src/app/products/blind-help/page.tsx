@@ -268,7 +268,8 @@ export default function BlindHelpPage() {
           >
             {/* TODO: replace with YouTube URL */}
             <iframe
-src="https://www.youtube.com/embed/CnJf0Ackmec"              title="วิดีโอแนะนำ Blind Help"
+              src="https://www.youtube.com/embed/CnJf0Ackmec"
+              title="วิดีโอแนะนำ Blind Help"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               style={{
@@ -318,11 +319,7 @@ src="https://www.youtube.com/embed/CnJf0Ackmec"              title="วิดี
 
           <div
             className="health-features-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "20px",
-            }}
+            style={{ display: "grid", gap: "20px" }}
           >
             {healthFeatures.map((f) => (
               <div
